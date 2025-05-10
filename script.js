@@ -58,3 +58,63 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+
+
+// CODIGO POPUP
+
+var contactButton = document.getElementById("contactButton");
+var bubble = document.getElementById("contactBubble");
+var contactPopup = document.getElementById('myForm');
+var bubbleShownInitially = false; // Nueva variable para rastrear si la burbuja se mostró inicialmente
+
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+    bubble.style.display = "none";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+    bubble.style.display = "none"; // Ocultamos la burbuja al cerrar el formulario
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+    // Mostramos la burbuja solo si no se ha mostrado antes
+    if (!bubbleShownInitially && bubble) {
+        bubble.style.display = "block";
+        setTimeout(function () {
+            bubble.style.opacity = "0";
+            setTimeout(function () {
+                bubble.style.display = "none";
+                bubble.style.opacity = "1";
+            }, 300);
+        }, 3000);
+        bubbleShownInitially = true; // Marcamos que la burbuja ya se mostró
+    } else if (bubble) {
+        bubble.style.display = "none"; // Si ya se mostró, la ocultamos directamente
+    }
+});
+
+window.onscroll = function () {
+    // Ya no mostramos la burbuja al hacer scroll
+    if (window.scrollY >= 400) {
+        contactButton.style.opacity = "0";
+    } else {
+        contactButton.style.display = "block";
+        setTimeout(function () {
+            contactButton.style.opacity = "1";
+        }, 10);
+    }
+};
+
+contactPopup.addEventListener('click', function (event) {
+    event.stopPropagation();
+});
+
+document.addEventListener('click', function (event) {
+    if (event.target !== contactPopup && event.target !== contactButton) {
+        contactPopup.style.display = 'none';
+        bubble.style.display = 'none'; // También ocultamos la burbuja al hacer clic fuera
+    }
+});

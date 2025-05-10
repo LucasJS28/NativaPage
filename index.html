@@ -40,33 +40,37 @@
                 <a href="#servicios" class="btn btn-primary">Descubre Nuestros Servicios</a>
             </div>
         </section>
-<section id="servicios">
-    <div class="container">
-        <h2>Nuestros Servicios</h2>
-        <div class="servicios-grid">
-            <div class="servicio-item">
-                <i class="fas fa-trash-alt"></i> <!-- Ícono de basura para gestión de residuos -->
-                <h3>Gestión de Residuos</h3>
-                <p>Recolección, transporte y disposición final adecuada de residuos sólidos urbanos e industriales.</p>
+        <section id="servicios">
+            <div class="container">
+                <h2>Nuestros Servicios</h2>
+                <div class="servicios-grid">
+                    <div class="servicio-item">
+                        <i class="fas fa-trash-alt"></i> <!-- Ícono de basura para gestión de residuos -->
+                        <h3>Gestión de Residuos</h3>
+                        <p>Recolección, transporte y disposición final adecuada de residuos sólidos urbanos e
+                            industriales.</p>
+                    </div>
+                    <div class="servicio-item">
+                        <i class="fas fa-recycle"></i> <!-- Ícono de reciclaje -->
+                        <h3>Reciclaje y Aprovechamiento</h3>
+                        <p>Programas de reciclaje para empresas y comunidades, maximizando el aprovechamiento de
+                            materiales.</p>
+                    </div>
+                    <div class="servicio-item">
+                        <i class="fas fa-cogs"></i> <!-- Ícono de engranajes para consultoría -->
+                        <h3>Consultoría Ambiental</h3>
+                        <p>Asesoramiento experto para el cumplimiento normativo y la implementación de prácticas
+                            sostenibles.</p>
+                    </div>
+                    <div class="servicio-item">
+                        <i class="fas fa-broom"></i> <!-- Ícono de escoba para limpieza -->
+                        <h3>Limpieza y Mantenimiento</h3>
+                        <p>Servicios de limpieza de áreas públicas y privadas, enfocados en la preservación del entorno.
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="servicio-item">
-                <i class="fas fa-recycle"></i> <!-- Ícono de reciclaje -->
-                <h3>Reciclaje y Aprovechamiento</h3>
-                <p>Programas de reciclaje para empresas y comunidades, maximizando el aprovechamiento de materiales.</p>
-            </div>
-            <div class="servicio-item">
-                <i class="fas fa-cogs"></i> <!-- Ícono de engranajes para consultoría -->
-                <h3>Consultoría Ambiental</h3>
-                <p>Asesoramiento experto para el cumplimiento normativo y la implementación de prácticas sostenibles.</p>
-            </div>
-            <div class="servicio-item">
-                <i class="fas fa-broom"></i> <!-- Ícono de escoba para limpieza -->
-                <h3>Limpieza y Mantenimiento</h3>
-                <p>Servicios de limpieza de áreas públicas y privadas, enfocados en la preservación del entorno.</p>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
 
         <!-- Nueva Sección: Descargas -->
@@ -181,6 +185,33 @@
             <p>Diseñado con <i class="fas fa-leaf" style="color: #CADB2A;"></i> por IA para el Medioambiente</p>
         </div>
     </footer>
+    <button class="open-button" id="contactButton" onclick="openForm()">
+        <i class="fa-solid fa-envelope"></i> Contáctanos
+        <div class="bubble" id="contactBubble">¿Tienes alguna pregunta? ¡Escríbenos!</div>
+    </button>
+
+
+    <!-- CODIGO POPUP-->
+    <div class="contact-popup" id="myForm">
+        <form action="/enviar_formulario.php" class="form-container" method="post">
+            <h3>Contáctanos</h3>
+
+            <label for="name"><b>Nombre</b></label>
+            <input type="text" placeholder="Ingresa tu nombre" name="name" required>
+
+            <label for="email"><b>Correo Electrónico</b></label>
+            <input type="email" placeholder="Ingresa tu correo electrónico" name="email" required>
+
+            <label for="subject"><b>Asunto</b></label>
+            <input type="text" placeholder="Asunto del mensaje" name="subject">
+
+            <label for="message"><b>Mensaje</b></label>
+            <textarea placeholder="Escribe tu mensaje aquí.." name="message" style="min-height:150px"></textarea>
+
+            <button type="submit" class="btn">Enviar</button>
+            <button type="button" class="btn cancel" onclick="closeForm()">Cerrar</button>
+        </form>
+    </div>
 
     <script src="script.js"></script>
 </body>
