@@ -91,25 +91,14 @@ header .container {
 #logo {
     height: 50px;
 }
-/* Descomenta y ajusta si usas texto para el logo junto a la imagen
-.logo-container h1 {
-    font-size: 1.8rem;
-    color: var(--white);
-    margin: 0;
-}
-.logo-container .green-text {
-    color: var(--primary-lime-green);
-}
-.logo-container .tagline {
-    font-size: 0.8rem;
-    color: #ccc;
-    margin: 0;
-    font-weight: 400;
-}
-*/
 
 nav {
     display: flex;
+    max-height: 0; /* Estado colapsado por defecto */
+    overflow: hidden; /* Ocultar contenido excedente cuando está colapsado */
+    transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out; /* Transición suave para la altura y el padding */
+    width: 100%; /* En móviles ocupará todo el ancho */
+    box-sizing: border-box;
 }
 nav ul {
     list-style: none;
@@ -224,7 +213,8 @@ section {
 /* Servicios Section */
 #servicios .servicios-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Siempre dos columnas en pantallas grandes */
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 40px;
 }
@@ -385,32 +375,17 @@ footer p {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    header .container {
-        /* flex-wrap: wrap; ya está definido arriba */
-        /* justify-content: space-between; ya está definido arriba */
-    }
-
     #logo {
         height: 45px;
     }
 
-    .logo-container {
-        /* No necesita ajustes especiales si el #logo ya está a la izquierda */
-    }
-
     nav {
         order: 3;
-        width: 100%;
-        max-height: 0;
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out;
-        background-color: var(--primary-dark-green);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
 
     nav.active {
-        max-height: calc(100vh - 70px);
-        overflow-y: auto;
+        max-height: 500px; /* Valor fijo para la altura máxima del menú activo en móvil */
+        overflow-y: hidden; /* CAMBIO AQUÍ: Oculta la barra de desplazamiento vertical */
         padding: 10px 0;
     }
 
@@ -452,12 +427,12 @@ footer p {
     }
 
     #hero h2 {
-        font-size: 2.2rem; /* Ajustado desde 2rem para consistencia con título de sección */
+        font-size: 2.2rem;
     }
 
     #hero p {
         font-size: 1rem;
-        padding: 0 10px; /* Para que no toque bordes si max-width es cercano al 100% */
+        padding: 0 10px;
     }
 
     h2 { /* h2 general en móvil */
@@ -465,7 +440,7 @@ footer p {
     }
 
     .servicios-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Una columna para móvil */
     }
 
     #ubicacion .ubicacion-content {
@@ -477,7 +452,7 @@ footer p {
         margin-bottom: 20px;
     }
     .map-container iframe {
-        min-height: 300px; /* Mantener altura consistente */
+        min-height: 300px;
         width: 100%;
     }
 
@@ -486,19 +461,24 @@ footer p {
         width: 100%;
         text-align: center;
     }
-    .direccion-info p {
-        /* Si se usara flex para alinear icono y texto en el p:
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        */
-    }
     .direccion-info p i {
         /* Ajustar margen si el texto del p se centra */
     }
 
     #contacto form {
         padding: 20px;
+    }
+}
+
+/* Desktop specific styles for navigation to override mobile hidden state */
+@media (min-width: 769px) {
+    nav {
+        max-height: none; /* Eliminar la restricción de altura para escritorio */
+        overflow: visible; /* Permitir que el contenido sea visible */
+        width: auto; /* Ancho automático para escritorio */
+        padding: 0; /* Eliminar padding extra del estado activo móvil */
+    }
+    nav ul li a {
+        padding: 0.5rem 0; /* Restaurar padding original para desktop */
     }
 }

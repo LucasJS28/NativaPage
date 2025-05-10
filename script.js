@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const nav = document.querySelector('nav');
-    const header = document.querySelector('header'); // Para referencia del clic
+    // const header = document.querySelector('header'); // Esta línea no se usa, se puede eliminar si no hay otro propósito.
 
     if (menuToggle && nav) {
         menuToggle.addEventListener('click', function(event) {
