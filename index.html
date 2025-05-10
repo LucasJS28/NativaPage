@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nativa Green - Ayudando al Medioambiente</title>
+    <title>Nativa Green - Soluciones Ambientales Integrales</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,7 +13,8 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo-container"> <img src="imagenes/logo.png" alt="Nativa Green Logo" id="logo">
+            <div class="logo-container">
+                <img src="imagenes/logo.png" alt="Nativa Green Logo" id="logo">
             </div>
             <button class="menu-toggle" aria-label="Toggle menu">
                 <i class="fas fa-bars"></i>
@@ -39,42 +40,68 @@
                 <a href="#servicios" class="btn btn-primary">Descubre Nuestros Servicios</a>
             </div>
         </section>
+<section id="servicios">
+    <div class="container">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-grid">
+            <div class="servicio-item">
+                <i class="fas fa-trash-alt"></i> <!-- Ícono de basura para gestión de residuos -->
+                <h3>Gestión de Residuos</h3>
+                <p>Recolección, transporte y disposición final adecuada de residuos sólidos urbanos e industriales.</p>
+            </div>
+            <div class="servicio-item">
+                <i class="fas fa-recycle"></i> <!-- Ícono de reciclaje -->
+                <h3>Reciclaje y Aprovechamiento</h3>
+                <p>Programas de reciclaje para empresas y comunidades, maximizando el aprovechamiento de materiales.</p>
+            </div>
+            <div class="servicio-item">
+                <i class="fas fa-cogs"></i> <!-- Ícono de engranajes para consultoría -->
+                <h3>Consultoría Ambiental</h3>
+                <p>Asesoramiento experto para el cumplimiento normativo y la implementación de prácticas sostenibles.</p>
+            </div>
+            <div class="servicio-item">
+                <i class="fas fa-broom"></i> <!-- Ícono de escoba para limpieza -->
+                <h3>Limpieza y Mantenimiento</h3>
+                <p>Servicios de limpieza de áreas públicas y privadas, enfocados en la preservación del entorno.</p>
+            </div>
+        </div>
+    </div>
+</section>
 
-        <section id="servicios">
+
+        <!-- Nueva Sección: Descargas -->
+        <section id="descargas" class="alt-bg">
             <div class="container">
-                <h2>Nuestros Servicios</h2>
-                <div class="servicios-grid">
-                    <div class="servicio-item">
-                        <img src="https://via.placeholder.com/300x200/CADB2A/2A4028?text=Servicio+1" alt="Servicio 1">
-                        <h3>Gestión de Residuos</h3>
-                        <p>Recolección, transporte y disposición final adecuada de residuos sólidos urbanos e
-                            industriales.</p>
+                <h2><i class="fas fa-download"></i> Descargas y Recursos</h2>
+                <p>Aquí puedes encontrar nuestros flyers y documentos importantes para descargar.</p>
+                <div class="descargas-grid">
+                    <div class="descarga-item">
+                        <a href="flayers/FLYER NATIVA.pdf" target="_blank">
+                            <i class="fas fa-file-pdf"></i> Flyer Contenedores y Pallets
+                        </a>
+                        <p>Información detallada sobre nuestros contenedores y pallets.</p>
                     </div>
-                    <div class="servicio-item">
-                        <img src="https://via.placeholder.com/300x200/CADB2A/2A4028?text=Servicio+2" alt="Servicio 2">
-                        <h3>Reciclaje y Aprovechamiento</h3>
-                        <p>Programas de reciclaje para empresas y comunidades, maximizando el aprovechamiento de
-                            materiales.</p>
+                    <div class="descarga-item">
+                        <a href="docs/politica-sostenibilidad.pdf" target="_blank">
+                            <i class="fas fa-file-alt"></i> Política de Sostenibilidad
+                        </a>
+                        <p>Conoce nuestro compromiso con el medioambiente y la sociedad.</p>
                     </div>
-                    <div class="servicio-item">
-                        <img src="https://via.placeholder.com/300x200/CADB2A/2A4028?text=Servicio+3" alt="Servicio 3">
-                        <h3>Consultoría Ambiental</h3>
-                        <p>Asesoramiento experto para el cumplimiento normativo y la implementación de prácticas
-                            sostenibles.</p>
-                    </div>
-                    <div class="servicio-item">
-                        <img src="https://via.placeholder.com/300x200/CADB2A/2A4028?text=Servicio+4" alt="Servicio 4">
-                        <h3>Limpieza y Mantenimiento</h3>
-                        <p>Servicios de limpieza de áreas públicas y privadas, enfocados en la preservación del entorno.
-                        </p>
+                    <!-- Puedes añadir más flyers aquí -->
+                    <div class="descarga-item">
+                        <a href="docs/catalogo-servicios.pdf" target="_blank">
+                            <i class="fas fa-book"></i> Catálogo de Servicios
+                        </a>
+                        <p>Descubre la gama completa de servicios que ofrecemos.</p>
                     </div>
                 </div>
             </div>
         </section>
 
+
         <section id="mision" class="text-section">
             <div class="container">
-                <h2>Nuestra Misión</h2>
+                <h2><i class="fas fa-bullseye"></i> Nuestra Misión</h2>
                 <p>Contribuir activamente a la protección del medioambiente y al desarrollo sostenible de Magangué y la
                     región, ofreciendo servicios de gestión integral de residuos y soluciones ambientales de alta
                     calidad, con un enfoque en la innovación, la eficiencia y la responsabilidad social.</p>
@@ -83,7 +110,7 @@
 
         <section id="vision" class="text-section alt-bg">
             <div class="container">
-                <h2>Nuestra Visión</h2>
+                <h2><i class="fas fa-eye"></i> Nuestra Visión</h2>
                 <p>Ser la empresa líder en servicios ambientales en la región, reconocida por nuestra excelencia
                     operativa, nuestro compromiso con la comunidad y el medioambiente, y por ser un referente en la
                     implementación de tecnologías limpias y prácticas sostenibles que inspiren un cambio positivo.</p>
@@ -95,8 +122,9 @@
                 <h2>Dónde Encontrarnos</h2>
                 <div class="ubicacion-content">
                     <div class="map-container">
+                        <!-- Reemplaza esto con el código de tu mapa de Google Maps real -->
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3931.086103775367!2d-74.7595839852009!3d9.24708389338532!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e585c4a5360257b%3A0x73370e58ac499958!2sMagangu%C3%A9%2C%20Bol%C3%ADvar%2C%20Colombia!5e0!3m2!1ses!2scl!4v1678889999999!5m2!1ses!2scl"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.726848405058!2d-74.86710708804575!3d9.98986447389296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e59f5494021d0e7%3A0x5a9d8801d2c5c6e!2sMagangu%C3%A9%2C%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1678901234567!5m2!1ses!2sco"
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
