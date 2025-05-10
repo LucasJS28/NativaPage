@@ -924,10 +924,17 @@ main > section:not(:first-child).active,
 }
 
 .accordion-icon {
-    font-size: 1.8rem; /* Size of the main icon in header */
-    margin-right: 15px;
-    color: var(--primary-lime-green); /* Icon color */
+    font-size: 1.8rem;
+    min-width: 45px; /* Ajusta este valor si tus íconos son más grandes o más pequeños */
+    text-align: center; /* Centra el ícono dentro de su espacio */
+    margin-right: 15px; /* Mantiene el espacio entre el ícono y el texto */
+    color: var(--primary-lime-green);
     transition: color 0.3s ease;
+
+    /* Estas propiedades aseguran que el ícono se centre vertical y horizontalmente */
+    display: flex;
+    justify-content: center; /* Centra el ícono horizontalmente dentro de min-width */
+    align-items: center;   /* Centra el ícono verticalmente */
 }
 
 .accordion-header.active .accordion-icon {
