@@ -182,7 +182,7 @@ nav ul li a:hover::after {
 }
 
 #hero p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin-bottom: 2rem;
     max-width: 600px;
     color: var(--light-gray-bg);
