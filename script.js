@@ -118,3 +118,69 @@ document.addEventListener('click', function (event) {
         bubble.style.display = 'none'; // También ocultamos la burbuja al hacer clic fuera
     }
 });
+
+//CODIGO PARA QUE AL REDIRECCIONAR CENTRE DIRECTAMENTE
+function scrollToSection(event) {
+    event.preventDefault(); // Evita el comportamiento de scroll predeterminado del enlace
+    const targetId = this.getAttribute('href').substring(1); // Obtiene el ID de la sección destino
+    const targetSection = document.getElementById(targetId); // Selecciona la sección
+    if (!targetSection) return; // Si no existe la sección, sale de la función
+
+    const headerHeight = document.querySelector('header').offsetHeight; // Altura del header
+    const sectionHeight = targetSection.offsetHeight; // Altura de la sección
+    const windowHeight = window.innerHeight; // Altura de la ventana
+
+    let scrollPosition = targetSection.offsetTop - (windowHeight / 2) + (sectionHeight / 2) - headerHeight;
+
+    // Asegurarse de no hacer scroll por encima del inicio de la página
+    scrollPosition = Math.max(0, scrollPosition);
+
+    window.scrollTo({
+        top: scrollPosition,
+        behavior: 'smooth' // Para un scroll suave
+    });
+}
+
+// Asigna la función a los enlaces del menú
+const navLinks = document.querySelectorAll('nav ul li a');
+navLinks.forEach(link => {
+    link.addEventListener('click', scrollToSection);
+});
+
+
+const sections = document.querySelectorAll('section'); // Selecciona todas las secciones
+const productosItems = document.querySelectorAll('#productos .producto-item');
+const serviciosItems = document.querySelectorAll('#servicios .servicio-item');
+const descargasItems = document.querySelectorAll('#descargas .descarga-item');
+
+function revealOnScroll(entries, observer) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target); // Opcional: deja de observar una vez que se anima
+        }
+    });
+}
+
+// CODIGO PARA LAS ANIMACIONES DE LA PAGINA
+const observer = new IntersectionObserver(revealOnScroll, {
+    root: null, // Usa el viewport como root
+    rootMargin: '0px',
+    threshold: 0.1 // Porcentaje de visibilidad para activar la animación
+});
+
+sections.forEach(section => {
+    observer.observe(section);
+});
+
+productosItems.forEach(item => {
+    observer.observe(item);
+});
+
+serviciosItems.forEach(item => {
+    observer.observe(item);
+});
+
+descargasItems.forEach(item => {
+    observer.observe(item);
+});
