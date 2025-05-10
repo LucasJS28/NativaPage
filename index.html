@@ -12,24 +12,24 @@
 
 <body>
     <header>
-    <div class="container">
-        <div class="logo-container">
-            <a href="#hero"><img src="imagenes/logo.png" alt="Nativa Green Logo" id="logo"></a>
+        <div class="container">
+            <div class="logo-container">
+                <a href="#hero"><img src="imagenes/logo.png" alt="Nativa Green Logo" id="logo"></a>
+            </div>
+            <button class="menu-toggle" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul>
+                    <li><a href="#servicios">Nuestros Servicios</a></li>
+                    <li><a href="#mision">Nuestra Misión</a></li>
+                    <li><a href="#vision">Nuestra Visión</a></li>
+                    <li><a href="#ubicacion">Dónde Encontrarnos</a></li>
+                    <li><a href="#contacto">Contáctanos</a></li>
+                </ul>
+            </nav>
         </div>
-        <button class="menu-toggle" aria-label="Toggle menu">
-            <i class="fas fa-bars"></i>
-        </button>
-        <nav>
-            <ul>
-                <li><a href="#servicios">Nuestros Servicios</a></li>
-                <li><a href="#mision">Nuestra Misión</a></li>
-                <li><a href="#vision">Nuestra Visión</a></li>
-                <li><a href="#ubicacion">Dónde Encontrarnos</a></li>
-                <li><a href="#contacto">Contáctanos</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    </header>
 
     <main>
         <section id="hero">
@@ -53,29 +53,141 @@
                     <div class="servicio-item">
                         <i class="fas fa-truck"></i>
                         <h3>Transporte</h3>
-                        <p>Traslado seguro y conforme a normativa de los residuos recolectados hasta su punto de tratamiento
+                        <p>Traslado seguro y conforme a normativa de los residuos recolectados hasta su punto de
+                            tratamiento
                             o disposición.</p>
                     </div>
                     <div class="servicio-item">
                         <i class="fas fa-dumpster"></i>
                         <h3>Disposición Final de Residuos No RESPEL</h3>
-                        <p>Entrega de residuos sólidos no peligrosos a vertederos autorizados, rellenos sanitarios o plantas
+                        <p>Entrega de residuos sólidos no peligrosos a vertederos autorizados, rellenos sanitarios o
+                            plantas
                             de tratamiento.</p>
-                    </div>
-                    <div class="servicio-item">
-                        <i class="fas fa-shield-alt"></i>
-                        <h3>Seguridad</h3>
-                        <p>Garantizamos la seguridad en cada etapa de nuestros servicios, protegiendo a nuestros clientes, personal y el medio ambiente.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
+
+        <section id="contribucion-sostenible" class="alt-bg">
+            <div class="container">
+                <h2>Nuestra Contribución Sostenible</h2>
+                <p>En Nativa Green, estamos comprometidos con un futuro más verde. Haz clic en cada área para conocer
+                    más sobre nuestras prácticas y cómo te inspiramos a unirte a la causa:</p>
+
+                <div class="accordion-container">
+                    <!-- Item 1 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <i class="fas fa-recycle accordion-icon"></i>
+                            <h3>Reducción de Residuos</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Implementamos estrategias para minimizar la generación de residuos en todas nuestras
+                                operaciones y procesos, promoviendo el reciclaje y la reutilización.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <i class="fas fa-bolt accordion-icon"></i>
+                            <h3>Uso Eficiente de la Energía</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Buscamos constantemente formas de optimizar el consumo energético, invirtiendo en
+                                tecnologías y prácticas que reducen nuestra huella de carbono.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <i class="fas fa-bicycle accordion-icon"></i>
+                            <h3>Uso de Transporte Sostenible</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Fomentamos el uso de vehículos y rutas que minimicen las emisiones, contribuyendo a un
+                                aire más limpio y menos contaminado.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <i class="fas fa-tint accordion-icon"></i>
+                            <h3>Uso Responsable del Agua</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Gestionamos el consumo de agua de manera consciente, implementando medidas de ahorro,
+                                recirculación y optimización en todos nuestros procesos.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <i class="fas fa-shopping-basket accordion-icon"></i>
+                            <h3>Consumo Consciente de Productos y Materiales</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Priorizamos la adquisición de productos y materiales con bajo impacto ambiental,
+                                provenientes de fuentes sostenibles y con certificaciones ecológicas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <i class="fas fa-solar-panel accordion-icon"></i>
+                            <h3>Optar por Energías Renovables</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Exploramos e integramos fuentes de energía limpia y renovable en nuestras operaciones,
+                                como la solar o eólica, para reducir la dependencia de combustibles fósiles.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <i class="fas fa-flask-poison accordion-icon"></i>
+                            <h3>Reducción de Químicos Tóxicos y Dañinos</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Evitamos el uso de productos químicos peligrosos y tóxicos, optando por alternativas
+                                ecológicas y biodegradables para proteger la salud y el ecosistema.</p>
+                        </div>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="accordion-item">
+                        <div class="accordion-header">
+                            <i class="fas fa-gavel accordion-icon"></i>
+                            <h3>Apoyo a Políticas y Regulaciones Ambientales</h3>
+                            <i class="fas fa-chevron-down toggle-icon"></i>
+                        </div>
+                        <div class="accordion-content">
+                            <p>Participamos activamente y respaldamos políticas y regulaciones que promueven la
+                                protección ambiental, el desarrollo sostenible y la responsabilidad corporativa.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="mision" class="text-section">
             <div class="container">
                 <h2><i class="fas fa-bullseye"></i> Nuestra Misión</h2>
                 <p>Contribuir activamente a la protección del medioambiente y al desarrollo sostenible de la región,
-                    ofreciendo servicios de gestión integral de residuos y soluciones ambientales de alta calidad, con un
+                    ofreciendo servicios de gestión integral de residuos y soluciones ambientales de alta calidad, con
+                    un
                     enfoque en la innovación, la eficiencia y la responsabilidad social.</p>
             </div>
         </section>
@@ -83,8 +195,10 @@
         <section id="vision" class="text-section alt-bg">
             <div class="container">
                 <h2><i class="fas fa-eye"></i> Nuestra Visión</h2>
-                <p>Ser la empresa líder en servicios ambientales en la región, reconocida por nuestra excelencia operativa,
-                    nuestro compromiso con la comunidad y el medioambiente, y por ser un referente en la implementación de
+                <p>Ser la empresa líder en servicios ambientales en la región, reconocida por nuestra excelencia
+                    operativa,
+                    nuestro compromiso con la comunidad y el medioambiente, y por ser un referente en la implementación
+                    de
                     tecnologías limpias y prácticas sostenibles que inspiren un cambio positivo.</p>
             </div>
         </section>
@@ -94,8 +208,9 @@
                 <h2>Dónde Encontrarnos</h2>
                 <div class="ubicacion-content">
                     <div class="map-container">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.726848405058!2d-74.86710708804575!3d9.98986447389296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e59f5494021d0e7%3A0x5a9d8801d2c5c6e!2sMagangu%C3%A9%2C%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1678901234567!5m2!1ses!2sco" width="600" height="450"
-                            style="border:0;" allowfullscreen="" loading="lazy"
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.726848405058!2d-74.86710708804575!3d9.98986447389296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e59f5494021d0e7%3A0x5a9d8801d2c5c6e!2sMagangu%C3%A9%2C%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1678901234567!5m2!1ses!2sco"
+                            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                     <div class="direccion-info">
@@ -123,10 +238,11 @@
                     <div class="descarga-item">
                         <i class="fas fa-file-pdf"></i>
                         <h3>Folleto de Servicios</h3>
-                        <p>Conoce en detalle nuestros servicios de recolección, transporte y disposición de residuos.</p>
+                        <p>Conoce en detalle nuestros servicios de recolección, transporte y disposición de residuos.
+                        </p>
                         <a href="flayers/flyerservicios.pdf" class="btn btn-secondary" download>Descargar PDF</a>
                     </div>
-                    </div>
+                </div>
             </div>
         </section>
 

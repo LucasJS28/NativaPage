@@ -184,3 +184,30 @@ serviciosItems.forEach(item => {
 descargasItems.forEach(item => {
     observer.observe(item);
 });
+
+
+// Accordion functionality for Sostenibilidad section
+const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+if (accordionHeaders.length > 0) {
+    accordionHeaders.forEach(header => {
+        header.addEventListener('click', function() {
+            const accordionItem = this.closest('.accordion-item');
+            const content = accordionItem.querySelector('.accordion-content');
+
+            // Toggle active class on the header
+            this.classList.toggle('active');
+
+            // Toggle the display/height of the content
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+                content.style.paddingTop = '0';
+                content.style.paddingBottom = '0';
+            } else {
+                content.style.maxHeight = content.scrollHeight + 'px';
+                content.style.paddingTop = '15px'; /* Add back padding when open */
+                content.style.paddingBottom = '15px';
+            }
+        });
+    });
+}
