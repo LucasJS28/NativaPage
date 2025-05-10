@@ -794,7 +794,7 @@ body {
 
 
 /* Animaciones de Entrada */
-section,
+main > section:not(:first-child),
 .producto-item,
 .servicio-item,
 .descarga-item {
@@ -803,7 +803,7 @@ section,
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 
-section.active,
+main > section:not(:first-child).active,
 .producto-item.active,
 .servicio-item.active,
 .descarga-item.active {
@@ -811,7 +811,7 @@ section.active,
     transform: translateY(0);
 }
 
-/* Opcional:  Puedes añadir diferentes animaciones para cada tipo de elemento */
+/* Opcional: Puedes añadir diferentes animaciones para cada tipo de elemento */
 #productos .producto-item {
     transition-delay: 0.2s;
 }
