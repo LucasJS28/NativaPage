@@ -292,3 +292,54 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+
+// INICIO: Lógica para la nueva sección de Productos
+
+// Lógica para que el clic en la tarjeta (excepto en el botón) active el botón
+document.querySelectorAll('.product-card').forEach(card => {
+    // Obtén el botón dentro de esta tarjeta específica
+    const button = card.querySelector('.details-button');
+
+    // Añade un listener de clic a toda la tarjeta
+    card.addEventListener('click', function (event) {
+        // Si el elemento clicado NO es el botón, entonces simula el clic en el botón
+        if (event.target !== button) {
+            button.click(); // Dispara el evento de clic en el botón
+        }
+        // Si el evento.target ES el botón, no hacemos nada aquí, ya que el propio listener del botón se encargará.
+    });
+});
+
+// Lógica para el botón "Ver Detalles"
+document.querySelectorAll('.details-button').forEach(button => {
+    button.addEventListener('click', function () {
+        const clickedDetails = this.nextElementSibling; // El div 'details' del producto clicado
+
+        // --- Cerrar todos los demás desplegables ---
+        document.querySelectorAll('.details').forEach(detailsSection => {
+            // Si el desplegable no es el que acabamos de clicar Y está abierto
+            if (detailsSection !== clickedDetails && detailsSection.classList.contains('open')) {
+                detailsSection.classList.remove('open'); // Cerrarlo
+                // Buscar el botón asociado a este desplegable y resetear su texto
+                const associatedButton = detailsSection.previousElementSibling;
+                if (associatedButton && associatedButton.classList.contains('details-button')) {
+                    associatedButton.textContent = 'Ver Detalles';
+                }
+            }
+        });
+        // --- Fin de la parte de cerrar otros desplegables ---
+
+        // Ahora, alternar el desplegable del producto clicado
+        clickedDetails.classList.toggle('open');
+
+        // Actualizar el texto del botón clicado
+        if (clickedDetails.classList.contains('open')) {
+            this.textContent = 'Ocultar Detalles';
+        } else {
+                this.textContent = 'Ver Detalles';
+        }
+    });
+});
+
+// FIN: Lógica para la nueva sección de Productos
