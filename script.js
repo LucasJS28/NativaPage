@@ -283,3 +283,58 @@ document.querySelectorAll('.details-button').forEach(button => {
     });
 });
 // FIN: Lógica para la nueva sección de Productos
+
+
+
+// Lógica para el envío del formulario de contacto con EmailJS
+document.addEventListener('DOMContentLoaded', function() {
+    // Paso 1: Inicializar EmailJS con tu Public Key (User ID)
+    // ¡IMPORTANTE! Reemplaza 'YOUR_PUBLIC_KEY' con la Public Key de tu cuenta de EmailJS
+    emailjs.init('YOUR_PUBLIC_KEY');
+
+    // Manejar el envío del formulario principal de contacto
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el envío de formulario por defecto
+
+            // Paso 2: Define tu Service ID y Template ID
+            // ¡IMPORTANTE! Reemplaza 'YOUR_SERVICE_ID' y 'YOUR_TEMPLATE_ID' con los IDs de tu servicio y plantilla
+            const serviceID = 'YOUR_SERVICE_ID';
+            const templateID = 'YOUR_TEMPLATE_ID';
+
+            // Envía el formulario usando EmailJS
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    alert('¡Mensaje enviado exitosamente! Nos pondremos en contacto contigo a la brevedad.');
+                    contactForm.reset(); // Limpiar el formulario después del envío exitoso
+                }, (error) => {
+                    alert('¡Error al enviar el mensaje! Por favor, inténtalo de nuevo. Puedes enviarnos un correo directamente a nativagreen.ecologica@gmail.com si el problema persiste.');
+                    console.error('Error de EmailJS:', error);
+                });
+        });
+    }
+
+    // Manejar el envío del formulario del popup de contacto
+    const popupContactForm = document.getElementById('popupContactForm');
+    if (popupContactForm) {
+        popupContactForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el envío de formulario por defecto
+
+            // Puedes usar el mismo Service ID y Template ID que el formulario principal,
+            // o crear unos diferentes si quieres plantillas de correo distintas para el popup.
+            const serviceID = 'service_iawk6hr'; // Podría ser el mismo
+            const templateID = 'template_txj0rcb'; // Podría ser el mismo o diferente para el popup
+
+            emailjs.sendForm(serviceID, templateID, this)
+                .then(() => {
+                    alert('¡Mensaje enviado exitosamente desde el popup! Nos pondremos en contacto contigo a la brevedad.');
+                    popupContactForm.reset(); // Limpiar el formulario del popup
+                    closeForm(); // Cerrar el popup después del envío exitoso
+                }, (error) => {
+                    alert('¡Error al enviar el mensaje desde el popup! Por favor, inténtalo de nuevo.');
+                    console.error('Error de EmailJS (popup):', error);
+                });
+        });
+    }
+});

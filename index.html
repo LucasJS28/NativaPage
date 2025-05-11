@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
-    <!-- INICIO NAV PRINCIPAL -->
     <header>
         <div class="container">
             <div class="logo-container">
@@ -33,9 +32,6 @@
             <div class="scroll-progress-indicator"></div>
         </div>
     </header>
-    <!-- FIN NAV PRINCIPAL -->
-
-    <!-- INICIO PORTADA PAGINA -->
     <main>
         <section id="hero">
             <div class="container">
@@ -50,9 +46,6 @@
                 <a href="#servicios" class="btn btn-primary">Descubre Nuestros Servicios</a>
             </div>
         </section>
-        <!-- FIN PORTADA PRINCIPAL -->
-
-        <!-- INICIO SERVICIOS -->
         <section id="servicios">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
@@ -79,9 +72,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIN SERVICIOS -->
-
-        <!-- INICIO PRODUCTOS -->
         <section id="productos" class="alt-bg">
             <div class="container">
                 <h2>Nuestros Contenedores y Pallets</h2>
@@ -186,9 +176,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIN PRODUCTOS -->
-
-        <!-- INICIO CONTRIBUCIONES -->
         <section id="contribucion-sostenible" class="alt-bg">
             <div class="container">
                 <h2>Nuestra Contribución Sostenible</h2>
@@ -294,9 +281,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIN CONTRIBUCIONES -->
-
-        <!-- INICIO NUESTRA MISION -->
         <section id="mision" class="text-section">
             <div class="container">
                 <h2><i class="fas fa-bullseye"></i> Nuestra Misión</h2>
@@ -306,9 +290,6 @@
                     enfoque en la innovación, la eficiencia y la responsabilidad social.</p>
             </div>
         </section>
-        <!-- FIN NUESTRA MISION -->
-
-        <!-- INICIO VISION -->
         <section id="vision" class="text-section alt-bg">
             <div class="container">
                 <h2><i class="fas fa-eye"></i> Nuestra Visión</h2>
@@ -319,9 +300,6 @@
                     tecnologías limpias y prácticas sostenibles que inspiren un cambio positivo.</p>
             </div>
         </section>
-        <!-- FIN VISION -->
-
-        <!-- INICIO UBICACION MAPA -->
         <section id="ubicacion">
             <div class="container">
                 <h2>Dónde Encontrarnos</h2>
@@ -341,9 +319,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIN UBICACION MAPA -->
-
-        <!-- INICIO DESCARGAS -->
         <section id="descargas">
             <div class="container">
                 <h2>Descargas Útiles</h2>
@@ -374,9 +349,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIN DESCARGAS -->
-
-        <!-- INICIO CONTACTANOS -->
         <section id="contacto" class="alt-bg">
             <div class="container">
                 <h2>Contáctanos</h2>
@@ -407,8 +379,7 @@
                 </form>
             </div>
         </section>
-        <!-- FIN CONTACTANOS -->
-    </main>
+        </main>
 
     <footer>
         <div class="container">
@@ -416,36 +387,33 @@
         </div>
     </footer>
 
-    <!-- INICIO POPUP CONTACTANOS -->
     <button class="open-button" id="contactButton" onclick="openForm()">
         <i class="fa-solid fa-envelope"></i> Contáctanos
         <div class="bubble" id="contactBubble">¿Tienes alguna pregunta? ¡Escríbenos!</div>
     </button>
 
     <div class="contact-popup" id="myForm">
-        <form action="/enviar_formulario.php" class="form-container" method="post">
+        <form class="form-container" id="popupContactForm">
             <h3>Contáctanos</h3>
 
-            <label for="name"><b>Nombre</b></label>
-            <input type="text" placeholder="Ingresa tu nombre" name="name" required>
+            <label for="popupName"><b>Nombre</b></label>
+            <input type="text" placeholder="Ingresa tu nombre" name="name" id="popupName" required>
 
-            <label for="email"><b>Correo Electrónico</b></label>
-            <input type="email" placeholder="Ingresa tu correo electrónico" name="email" required>
+            <label for="popupEmail"><b>Correo Electrónico</b></label>
+            <input type="email" placeholder="Ingresa tu correo electrónico" name="email" id="popupEmail" required>
 
-            <label for="subject"><b>Asunto</b></label>
-            <input type="text" placeholder="Asunto del mensaje" name="subject">
+            <label for="popupSubject"><b>Asunto</b></label>
+            <input type="text" placeholder="Asunto del mensaje" name="subject" id="popupSubject">
 
-            <label for="message"><b>Mensaje</b></label>
-            <textarea placeholder="Escribe tu mensaje aquí.." name="message" style="min-height:150px"></textarea>
+            <label for="popupMessage"><b>Mensaje</b></label>
+            <textarea placeholder="Escribe tu mensaje aquí.." name="message" id="popupMessage" style="min-height:150px"></textarea>
 
             <button type="submit" class="btn">Enviar</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Cerrar</button>
         </form>
     </div>
-    <!-- FIN POPUP CONTACTANOS -->
-
-
     <script src="script.js"></script>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/v3/email.min.js"></script>
 </body>
 
 </html>
