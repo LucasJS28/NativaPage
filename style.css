@@ -1236,11 +1236,6 @@ main > section:not(:first-child).active,
     background-color: var(--primary-lime-green, #28df99); /* Color de la línea (usa tu verde de marca) */
     z-index: 9999; /* Asegura que la barra esté por encima de otros elementos */
     transition: width 0.1s ease-out; /* Hace que el relleno de la barra sea suave y no brusco */
-
-    /* IMPORTANTE: AJUSTA ESTO */
-    /* El valor de 'top' debe ser igual a la altura de tu barra de navegación. */
-    /* Si tu <nav> tiene una altura de 80px, entonces pon top: 80px; */
-    /* Si tu <nav> es responsivo y su altura cambia, la solución es más compleja y podría necesitar JS. */
     top: 80px; /* Ejemplo: Ajusta esto a la altura de tu nav */ 
 }
 
