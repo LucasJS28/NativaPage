@@ -512,9 +512,6 @@ footer p {
     width: 100%;
     text-align: center;
   }
-  .direccion-info p i {
-    /* Ajustar margen si el texto del p se centra */
-  }
 
   #contacto form {
     padding: 20px;
@@ -626,6 +623,18 @@ body {
   margin-right: 10px;
 }
 
+/* Animación para el popup */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 /* El formulario de contacto */
 .contact-popup {
   display: none;
@@ -645,6 +654,8 @@ body {
   box-sizing: border-box;
   border: 1px solid var(--border-color);
   box-shadow: 0 5px 15px var(--shadow-color); /* Sombra más pronunciada */
+  animation: fadeInScale 0.3s ease-out forwards; /* Animación de entrada */
+
 }
 
 .form-container h3 {
@@ -730,6 +741,7 @@ body {
   font-weight: normal;
   white-space: nowrap;
   box-shadow: 0 2px 5px var(--shadow-color);
+  
 }
 
 .bubble::before {
@@ -982,5 +994,64 @@ main > section:not(:first-child).active,
     }
     .accordion-content {
         padding: 0 20px;
+    }
+}
+
+/* Estilos para la recreación del logo "Nativa Green" */
+.recreated-logo-container {
+    /* Usar la fuente de tu sitio (Roboto) y el peso de negrita */
+    font-family: var(--font-family);
+    font-weight: 900;
+    display: inline-flex; 
+    align-items: baseline; 
+    padding: 15px 25px; 
+    border-radius: 8px; 
+    line-height: 1; 
+    font-size: 60px; 
+    letter-spacing: -2px; 
+    position: relative;
+    overflow: hidden;
+}
+
+.recreated-logo-text-wrapper {
+    position: relative;
+    display: inline-block;
+    line-height: 1; 
+
+}
+/* Color del texto "NATIVA" */
+.recreated-part-nativa {
+    color: var(--white);
+}
+
+.recreated-part-green {
+    /* Color del texto "GREEN" */
+    color: var(--primary-lime-green);
+    /* Hereda el font-size, font-weight y letter-spacing del contenedor principal */
+    margin-left: 5px; /* Espacio entre NATIVA y GREEN */
+}
+
+
+/* Responsive: Ajusta el tamaño del logo para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .recreated-logo-container {
+        font-size: 40px; /* Reduce el tamaño de la fuente para móvil */
+        padding: 10px 15px; /* Reduce el padding */
+        letter-spacing: -1px; /* Ajusta el espaciado */
+    }
+
+}
+
+@media (max-width: 480px) {
+    .recreated-logo-container {
+        font-size: 30px; /* Aún más pequeño para móviles muy pequeños */
+        padding: 8px 12px;
+        letter-spacing: 0px; /* A veces es mejor no tener letter-spacing negativo en fuentes pequeñas */
+    }
+
+    .recreated-logo-leaf {
+        font-size: 14px;
+        top: -4px;
+        left: -2px;
     }
 }
