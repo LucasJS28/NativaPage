@@ -266,3 +266,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const progressBar = document.querySelector('.scroll-progress-indicator');
+
+    // Verificamos que el elemento de la barra de progreso exista en la página
+    if (progressBar) {
+        // Añadimos un "escuchador de eventos" para el evento 'scroll' en la ventana
+        window.addEventListener('scroll', () => {
+            // 1. Calculamos la altura total desplazable del documento.
+            //    document.documentElement.scrollHeight es la altura total del contenido.
+            //    window.innerHeight es la altura visible de la ventana (viewport).
+            //    Restamos window.innerHeight porque no puedes desplazar más allá de la parte inferior visible.
+            const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+            
+            // 2. Obtenemos la posición actual de desplazamiento (cuánto se ha desplazado el usuario desde arriba).
+            const scrollPosition = window.scrollY;
+
+            // 3. Calculamos el porcentaje de desplazamiento.
+            //    Aseguramos que totalHeight no sea cero para evitar errores de división.
+            const scrollProgress = totalHeight > 0 ? (scrollPosition / totalHeight) * 100 : 0;
+
+            // 4. Actualizamos el ancho de la barra de progreso en el CSS.
+            progressBar.style.width = scrollProgress + '%';
+        });
+    }
+});
