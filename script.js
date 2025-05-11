@@ -48,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (contactForm) {
         contactForm.addEventListener('submit', function(event) {
             event.preventDefault(); // Prevenir el envío real del formulario
-            alert('¡Gracias por tu mensaje! Nos pondremos en contacto contigo pronto.');
             contactForm.reset(); // Limpiar el formulario
         });
     }
@@ -283,3 +282,79 @@ document.querySelectorAll('.details-button').forEach(button => {
     });
 });
 // FIN: Lógica para la nueva sección de Productos
+
+// Function to handle form submission for both the main form and the popup form
+async function handleFormSubmit(form, statusId) {
+    const statusElement = document.getElementById(statusId);
+    const data = new FormData(form);
+    const action = form.action;
+
+    // Clear previous status message when submitting (only for error/network messages)
+    if (statusElement) {
+        statusElement.innerHTML = '';
+        statusElement.style.color = '';
+    }
+
+    try {
+        const response = await fetch(action, {
+            method: "POST",
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+
+        if (response.ok) {
+            const successMessage = "✅ ¡Mensaje enviado con éxito!";
+            alert(successMessage); // Display alert for success
+            form.reset(); // Clears the form fields
+
+            // We no longer update the statusElement for success messages, as an alert is used.
+            // Return success status for potential future use (e.g., closing popup automatically)
+            return { success: true, message: successMessage };
+        } else {
+            const errorMessage = "❌ Hubo un error al enviar el mensaje.";
+            if (statusElement) { // Still display errors in the status div
+                alert(errorMessage); // Display alert for success
+            }
+            return { success: false, message: errorMessage }; // Return error status
+        }
+    } catch (error) {
+        const networkError = "⚠️ Error de red. Inténtalo más tarde.";
+        if (statusElement) { // Still display network errors in the status div
+            alert(networkError); // Display alert for success
+        }
+        return { success: false, message: networkError }; // Return error status
+    }
+}
+
+// Get the main contact form section
+const mainForm = document.getElementById("contactForm");
+if (mainForm) {
+    mainForm.addEventListener("submit", async function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Handle the submission of the main form.
+        // Success will trigger an alert and clear the form. Errors will display below the form.
+        await handleFormSubmit(mainForm, "status-main");
+
+        // IMPORTANT NOTE: The previous behavior of automatically opening the popup
+        // and displaying the success message inside it when the main form was submitted
+        // has been removed, as the alert now serves as the primary success notification.
+        // The user can still open the popup manually using the floating button.
+    });
+}
+
+// Get the form inside the contact popup
+const popupForm = document.querySelector(".contact-popup .form-container");
+if (popupForm) {
+    popupForm.addEventListener("submit", async function (e) {
+        e.preventDefault(); // Prevent default form submission
+
+        // Handle the submission of the popup form.
+        // Success will trigger an alert and clear the form. Errors will display within the popup.
+        await handleFormSubmit(popupForm, "status-popup");
+        // The popup remains open after submission, allowing the user to see the alert
+        // and then the cleared form or any error message.
+    });
+}
