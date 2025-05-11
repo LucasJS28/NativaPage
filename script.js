@@ -290,7 +290,7 @@ document.querySelectorAll('.details-button').forEach(button => {
 document.addEventListener('DOMContentLoaded', function() {
     // Paso 1: Inicializar EmailJS con tu Public Key (User ID)
     // ¡IMPORTANTE! Reemplaza 'YOUR_PUBLIC_KEY' con la Public Key de tu cuenta de EmailJS
-    emailjs.init('YOUR_PUBLIC_KEY');
+    emailjs.init('w2h56ZMl0N3aT3Efr');
 
     // Manejar el envío del formulario principal de contacto
     const contactForm = document.getElementById('contactForm');
@@ -300,8 +300,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
             // Paso 2: Define tu Service ID y Template ID
             // ¡IMPORTANTE! Reemplaza 'YOUR_SERVICE_ID' y 'YOUR_TEMPLATE_ID' con los IDs de tu servicio y plantilla
-            const serviceID = 'YOUR_SERVICE_ID';
-            const templateID = 'YOUR_TEMPLATE_ID';
+            const serviceID = 'service_iawk6hr'; // Podría ser el mismo
+            const templateID = 'template_txj0rcb'; // Podría ser el mismo o diferente para el popup
 
             // Envía el formulario usando EmailJS
             emailjs.sendForm(serviceID, templateID, this)
