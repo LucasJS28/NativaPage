@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -227,7 +228,6 @@
                 </div>
             </div>
         </section>
-
         <section id="descargas">
             <div class="container">
                 <h2>Descargas Útiles</h2>
@@ -238,19 +238,26 @@
                         <i class="fas fa-file-pdf"></i>
                         <h3>Folleto Informativo Nativa Green</h3>
                         <p>Descarga nuestro folleto con información detallada sobre nuestros contenedores y pallets.</p>
-                        <a href="flayers/flyercontenedores.pdf" class="btn btn-secondary" download>Descargar PDF</a>
+                        <a href="flayers/flyercontenedores.pdf" download class="btn-animated-download-v3"
+                            id="btn-folleto-contenedores">
+                       <br>
+                            <div class="arrow"></div>
+                        </a>
                     </div>
                     <div class="descarga-item">
                         <i class="fas fa-file-pdf"></i>
                         <h3>Folleto de Servicios</h3>
                         <p>Conoce en detalle nuestros servicios de recolección, transporte y disposición de residuos.
                         </p>
-                        <a href="flayers/flyerservicios.pdf" class="btn btn-secondary" download>Descargar PDF</a>
+                        <a href="flayers/flyerservicios.pdf" download class="btn-animated-download-v3"
+                            id="btn-folleto-servicios">
+                            <br>
+                            <div class="arrow"></div>
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-
         <section id="contacto" class="alt-bg">
             <div class="container">
                 <h2>Contáctanos</h2>

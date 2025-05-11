@@ -1055,3 +1055,174 @@ main > section:not(:first-child).active,
         left: -2px;
     }
 }
+
+
+/* Asegúrate de que estas variables estén definidas en tu CSS, por ejemplo, en :root */
+:root {
+    --white: #ffffff;
+    --primary-lime-green: #8bc34a; /* Ejemplo de color, ajusta al tuyo */
+    /* Otras variables... */
+}
+
+/* Estilos para el botón de descarga animado (btn-animated-download-v3) */
+.btn-animated-download-v3 {
+    background-color: var(--white); /* Fondo del botón: blanco */
+    width: 100px; /* Reducido de 140px */
+    height: 50px; /* Reducido de 70px */
+    border: none;
+    outline: none;
+    margin-top: 40px !important;
+    /* PROPIEDADES CLAVE PARA QUE FUNCIONE CORRECTAMENTE EL TAMAÑO Y LA POSICIÓN */
+    display: block; /* MUY IMPORTANTE: Hace que <a> se comporte como un bloque para respetar width/height */
+    position: relative; /* MUY IMPORTANTE: Permite posicionar correctamente el .arrow y los pseudo-elementos */
+    
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all .5s; /* Transición general para el botón */
+
+    /* Para centrar el botón */
+    margin: 15px auto; /* Centra horizontalmente y da espacio vertical */
+    
+    /* Estilo de la sombra del botón principal */
+    box-shadow: 0 0 3px #222;
+    overflow: hidden; /* Oculta el desbordamiento de la flecha al animar */
+}
+
+/* Estilos para el div .arrow dentro del botón */
+.btn-animated-download-v3 .arrow {
+    height: 18px;
+    width: 11px;
+    background-color: var(--primary-lime-green);
+    border-radius: 2px;
+    margin: -18px auto 0;
+    position: relative; /* CLAVE: Para que sus ::before y ::after se posicionen dentro de él */
+    transition: transform 0.3s ease-in, opacity 0.3s ease-in; /* Transición para la flecha */
+    transform: translateY(0); /* Posición inicial de la flecha */
+    opacity: 1; /* Opacidad inicial de la flecha */
+}
+
+/* Parte inferior de la flecha (forma de V) */
+.btn-animated-download-v3 .arrow::after {
+    content: '';
+    height: 14px;
+    width: 14px;
+    position: absolute; /* CLAVE: Posicionamiento absoluto dentro del .arrow */
+    background-color: var(--primary-lime-green);
+    border-radius: 2px;
+    transform: rotateZ(45deg) translate(1px, 5px);
+    bottom: 0;
+    right: -5px;
+    transition: all .5s;
+    transition-delay: .5s;
+    opacity: 1; /* Opacidad inicial */
+}
+
+/* Parte superior de la flecha (línea horizontal) */
+.btn-animated-download-v3 .arrow::before {
+    content: '';
+    background-color: var(--primary-lime-green);
+    width: 18px;
+    height: 7px;
+    position: absolute; /* CLAVE: Posicionamiento absoluto dentro del .arrow */
+    left: -4px;
+    bottom: -18px;
+    border-radius: 2px;
+    transition: all .5s;
+    opacity: 1; /* Opacidad inicial */
+}
+
+/* Pseudo-elementos para la sombra animada del botón */
+.btn-animated-download-v3::after {
+    content: '';
+    position: absolute; /* CLAVE: Posicionamiento absoluto dentro del botón */
+    z-index: -1;
+    background-color: var(--primary-lime-green);
+    height: 100%;
+    width: 100%;
+    bottom: -4px;
+    right: -4px;
+    border-radius: 5px;
+    transition: all .5s; /* Transición para la sombra del botón */
+}
+
+/* Nuevo pseudo-elemento para el icono de verificación (checkmark) */
+.btn-animated-download-v3::before {
+    content: ''; /* Por defecto vacío */
+    font-family: "Font Awesome 5 Free"; /* Necesita Font Awesome */
+    font-weight: 900; /* Para iconos sólidos de Font Awesome */
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    opacity: 0; /* Oculto por defecto */
+    transition: opacity 0.3s ease-in;
+    z-index: 1; /* Asegura que el checkmark esté por encima */
+}
+
+/* Estados de animación */
+
+/* Estado de "descargando" */
+.btn-animated-download-v3.downloading {
+    background-color: #6c757d; /* Color grisáceo para descargar */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.btn-animated-download-v3.downloading .arrow {
+    transform: translateY(25px); /* Mueve la flecha hacia abajo */
+    opacity: 0; /* La flecha se desvanece */
+}
+
+.btn-animated-download-v3.downloading .arrow::before,
+.btn-animated-download-v3.downloading .arrow::after {
+    opacity: 0; /* Las partes de la flecha también se desvanecen */
+}
+
+/* Estado de "descargado" */
+.btn-animated-download-v3.downloaded {
+    background-color: #28a745; /* Verde para indicar éxito */
+    width: 50px; /* Se encoge para un estado de "listo" */
+    height: 50px;
+    border-radius: 50%; /* Se vuelve circular */
+    transition: all 0.5s ease-out; /* Transición suave a este estado */
+    box-shadow: 0 0 8px rgba(40, 167, 69, 0.6);
+}
+
+.btn-animated-download-v3.downloaded .arrow {
+    display: none; /* Oculta la flecha completamente */
+}
+
+.btn-animated-download-v3.downloaded::before {
+    content: '\f00c'; /* Icono de verificación de Font Awesome */
+    opacity: 1; /* Muestra el checkmark */
+}
+
+/* Estado de "revirtiendo" (volviendo al original) */
+.btn-animated-download-v3.reverting {
+    background-color: var(--white);
+    width: 100px; /* Vuelve al ancho original */
+    height: 50px; /* Vuelve al alto original */
+    border-radius: 4px; /* Vuelve al radio de borde original */
+    box-shadow: 0 0 3px #222; /* Vuelve a la sombra original */
+    transition: all 0.5s ease-out;
+}
+
+.btn-animated-download-v3.reverting .arrow {
+    display: block; /* Asegura que la flecha sea visible */
+    opacity: 1;
+    transform: translateY(0); /* Vuelve a la posición original */
+    transition: transform 0.5s ease-out, opacity 0.5s ease-out 0.2s; /* Transición con un pequeño retraso para la opacidad */
+}
+
+.btn-animated-download-v3.reverting .arrow::before,
+.btn-animated-download-v3.reverting .arrow::after {
+    opacity: 1;
+    transition: opacity 0.5s ease-out 0.2s;
+}
+
+.btn-animated-download-v3.reverting::before {
+    content: ''; /* Oculta el checkmark durante la reversión */
+    opacity: 0;
+}

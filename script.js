@@ -211,3 +211,58 @@ if (accordionHeaders.length > 0) {
         });
     });
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const downloadButtons = document.querySelectorAll('.btn-animated-download-v3');
+
+    downloadButtons.forEach(button => {
+        // Almacena el href original para que el script pueda activarlo más tarde
+        const originalHref = button.getAttribute('href');
+
+        button.addEventListener('click', (event) => {
+            event.preventDefault(); // Evita el comportamiento de descarga por defecto del <a> inicialmente
+
+            // Si el botón ya está en un estado animado, no hacer nada
+            if (button.classList.contains('downloading') || button.classList.contains('downloaded') || button.classList.contains('reverting')) {
+                return;
+            }
+
+            // 1. Iniciar la animación de "descargando"
+            button.classList.add('downloading');
+
+            // Simular el tiempo de descarga (ej. 1.5 segundos)
+            setTimeout(() => {
+                button.classList.remove('downloading');
+                button.classList.add('downloaded');
+
+                // 2. Activar la descarga real del archivo
+                const tempLink = document.createElement('a');
+                tempLink.href = originalHref;
+                // Establece el nombre del archivo para la descarga
+                tempLink.download = originalHref.substring(originalHref.lastIndexOf('/') + 1); 
+                document.body.appendChild(tempLink);
+                tempLink.click(); // Simula un clic en el enlace de descarga
+                document.body.removeChild(tempLink); // Limpia el enlace temporal
+
+                // 3. Revertir el botón al estado original después de un breve tiempo (ej. 2 segundos)
+                setTimeout(() => {
+                    button.classList.remove('downloaded');
+                    button.classList.add('reverting'); // Añade la clase para la transición de reversión
+
+                    // Después de que la transición de reversión termine (ej. 0.5 segundos),
+                    // elimina la clase 'reverting' para volver al estado base y limpiar.
+                    setTimeout(() => {
+                        button.classList.remove('reverting');
+                        // Asegurarse de que la flecha sea completamente visible si fue ocultada con display:none
+                        const arrow = button.querySelector('.arrow');
+                        if (arrow) {
+                            arrow.style.display = 'block'; // Restablece display si fue none
+                            // Las transiciones CSS se encargarán del resto (opacidad, transform)
+                        }
+                    }, 500); // Duración de la transición de reversión
+                }, 2000); // Duración del estado "descargado"
+            }, 1500); // Duración simulada del proceso de descarga
+        });
+    });
+});
