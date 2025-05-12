@@ -1450,9 +1450,52 @@ main > section:not(:first-child).active,
 
 /* FIN: Estilos para la nueva sección de Productos */
 
+/* INICIO REDES SOCIALES */
 
-  .status-message {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 14px;
-  }
+   .red {
+      position: fixed;
+      top: 600px;
+      z-index: 5000;
+      left: 0;
+    }
+
+    .red div a {
+      display: block;
+      padding: 10px 20px;
+      color: #fff;
+      text-decoration: none;
+      width: 55px;
+      transition: all 0.4s ease;
+    }
+
+    #facebook a {
+      background: #3b5998;
+      border-top-right-radius: 10px;
+    }
+
+    #facebook a:hover {
+      background: #000;
+      padding: 10px 50px;
+    }
+
+    #instagram a {
+      background: #e4405f;
+    }
+
+    #instagram a:hover {
+      background: #000;
+      padding: 10px 50px;
+    }
+
+    #whatsapp a {
+      background: #25d366;
+      border-bottom-right-radius: 10px;
+    }
+
+    #whatsapp a:hover {
+      background: #000;
+      padding: 10px 50px;
+    }
+
+
+    /* FIN REDES SOCIALES */
