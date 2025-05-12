@@ -16,10 +16,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
         integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+
 </head>
 
 <body>
-    <!-- INICIO NAV PRINCIPAL -->
     <header>
         <div class="container">
             <div class="logo-container">
@@ -31,7 +32,7 @@
             <nav>
                 <ul>
                     <li><a href="#servicios">Nuestros Servicios</a></li>
-                    <li><a href="#productos">Nuestros Productos</a></li>
+                    <li><a href="#galeria">Flota y Contenedores</a></li>
                     <li><a href="#mision">Nuestra Misión</a></li>
                     <li><a href="#vision">Nuestra Visión</a></li>
                     <li><a href="#ubicacion">Dónde Encontrarnos</a></li>
@@ -41,9 +42,6 @@
             <div class="scroll-progress-indicator"></div>
         </div>
     </header>
-    <!-- FIN NAV PRINCIPAL -->
-
-    <!-- INICIO PORTADA PAGINA -->
     <main>
         <section id="hero">
             <div class="container">
@@ -58,9 +56,6 @@
                 <a href="#servicios" class="btn btn-primary">Descubre Nuestros Servicios</a>
             </div>
         </section>
-        <!-- FIN PORTADA PRINCIPAL -->
-
-        <!-- INICIO SERVICIOS -->
         <section id="servicios">
             <div class="container">
                 <h2>Nuestros Servicios</h2>
@@ -87,40 +82,67 @@
                 </div>
             </div>
         </section>
-        <!-- FIN SERVICIOS -->
-
-        <!-- INICIO PRODUCTOS -->
         <section id="productos" class="alt-bg">
             <div class="container">
-                <h2>Nuestros Contenedores y Pallets</h2>
-
+                <h2>Nuestros Contenedores y Servicios Adicionales</h2>
                 <div class="product-grid-container">
+                    <div class="product-card">
+                        <img src="imagenes/placeholder_oficina.jpg" alt="Contenedor Oficina y Bodega">
+                        <div class="product-info">
+                            <h2>Arriendo de Contenedores Especializados</h2>
+                            <p>Soluciones modulares y versátiles para oficinas móviles o almacenamiento seguro.</p>
+                            <button class="details-button">Ver Detalles</button>
+                            <div class="details">
+                                <h3>Detalles del Servicio</h3>
+                                <ul>
+                                    <li>Contenedores de 20 pies (6 metros) de largo.</li>
+                                    <li>**Oficina:** Acondicionados con aislación, ventanas, puerta de seguridad,
+                                        instalación eléctrica.</li>
+                                    <li>**Bodega:** Estructura robusta, segura y hermética, ideal para proteger equipos
+                                        y materiales.</li>
+                                    <li>Perfectos para proyectos en construcción, eventos, faenas o almacenamiento
+                                        temporal/permanente.</li>
+                                    <li>Disponibilidad y logística de entrega flexible.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <img src="imagenes/placeholder_traslado.jpg" alt="Traslado de Maquinaria Pesada">
+                        <div class="product-info">
+                            <h2>Traslado Especializado de Maquinaria</h2>
+                            <p>Servicio de transporte para maquinaria de gama baja y cargas especiales en rampla plana.
+                            </p>
+                            <button class="details-button">Ver Detalles</button>
+                            <div class="details">
+                                <h3>Detalles del Servicio</h3>
+                                <ul>
+                                    <li>Transporte de maquinaria de hasta ciertas dimensiones y peso (ej:
+                                        retroexcavadoras, minicargadores, montacargas).</li>
+                                    <li>Rampla plana de 13 metros y 50 centímetros de longitud, adecuada para cargas
+                                        sobredimensionadas.</li>
+                                    <li>Personal capacitado y experimentado en logística de carga pesada.</li>
+                                    <li>Cumplimiento de normativas de seguridad y permisos de tránsito.</li>
+                                    <li>Soluciones adaptadas a las necesidades de proyectos de construcción e
+                                        industriales.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                     <div class="product-card">
                         <img src="imagenes/contenedorclose.png" alt="Contenedor Close-Top 12m3">
                         <div class="product-info">
                             <h2>Contenedor CLOSE-TOP</h2>
                             <p>Para Polibrazo - Capacidad 12 m³</p>
-                            <button class="details-button">Ver Detalles</button>
-                            <div class="details">
-                                <h3>Especificaciones Técnicas</h3>
-                                <ul>
-                                    <li>Trineo viga IPN160</li>
-                                    <li>Telera en rectangular 100 x 50 x 3</li>
-                                    <li>Puerta Cuadrado 75 x 75 x3</li>
-                                    <li>Frente Espesor 3mm</li>
-                                    <li>Piso Espesor 3mm</li>
-                                    <li>Laterales Espesor 3mm</li>
-                                    <li>Puerta Espesor 3mm</li>
-                                    <li>Plancha Techo y Lateral Superior 3mm</li>
-                                    <li>Gráfica de seguridad</li>
-                                    <li>Puertas Superiores Apertura Lateral Espesor 3mm</li>
-                                    <li>Rueda Diámetro 6" con Grasera</li>
-                                    <li>Bisagras Calidad SAE 1045 con Grasera</li>
-                                    <li>Toma Diámetro 2 ½" Calidad SAE 1045</li>
-                                    <li>Portalón Apertura Lateral Cierre Palanca Seguro Pico de Loro</li>
-                                    <li>Terminación Anticorrosivo Epóxido y Pintura Poliuretano</li>
-                                </ul>
-                            </div>
+                            <h3>Utilidad Principal</h3>
+                            <ul>
+                                <li>Ideal para la gestión eficiente de residuos domésticos y de oficina.</li>
+                                <li>Su diseño con tapa superior asegura el control de olores y la protección contra
+                                    elementos externos.</li>
+                                <li>Perfecto para la recolección semanal en zonas residenciales o pequeños negocios.
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -129,74 +151,92 @@
                         <div class="product-info">
                             <h2>Contenedor OPEN-TOP</h2>
                             <p>Para Polibrazo - Capacidad 14 m³</p>
-                            <button class="details-button">Ver Detalles</button>
-                            <div class="details">
-                                <h3>Especificaciones Técnicas</h3>
-                                <ul>
-                                    <li>Trineo viga IPN160</li>
-                                    <li>Telera en rectangular 100 x 50 x 3</li>
-                                    <li>Puerta Cuadrado 75 x 75 x3</li>
-                                    <li>Frente Espesor 3mm</li>
-                                    <li>Piso Espesor 3mm</li>
-                                    <li>Laterales Espesor 3mm</li>
-                                    <li>Puerta Espesor 3mm</li>
-                                    <li>Gráfica de seguridad</li>
-                                    <li>Rueda Diámetro 6" con Grasera</li>
-                                    <li>Bisagras Calidad SAE 1045 con Grasera</li>
-                                    <li>Toma Diámetro 2 ½" Calidad SAE 1045</li>
-                                    <li>Portalón Apertura Lateral Cierre Palanca Seguro Pico de Loro</li>
-                                    <li>Terminación Anticorrosivo Epóxido y Pintura Poliuretano</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="imagenes/pallet.png" alt="Pallet Aéreo">
-                        <div class="product-info">
-                            <h2>PALLET AEREO</h2>
-                            <p>Medida: 1000X1200MM</p>
-                            <button class="details-button">Ver Detalles</button>
-                            <div class="details">
-                                <h3>Especificaciones</h3>
-                                <ul>
-                                    <li>Tipo de madera: En Bruto</li>
-                                    <li>Tablas a Cubiertas a Traviesa, 42 clavos y en Piso 18</li>
-                                    <li>Cubierta: 7 piezas, Tablas de 20x90x1200</li>
-                                    <li>Traviesas: 3 piezas, Tablas de 20x90x1000</li>
-                                    <li>Piso: 3 piezas, Tablas de 20x90x1200</li>
-                                    <li>Tacos: 9 piezas, Tacos de 70x70x90</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="product-card">
-                        <img src="imagenes/palletreforzado.png" alt="Pallet Reforzado">
-                        <div class="product-info">
-                            <h2>PALLET REFORZADO</h2>
-                            <p>Medida: 1000X1200MM</p>
-                            <button class="details-button">Ver Detalles</button>
-                            <div class="details">
-                                <h3>Especificaciones</h3>
-                                <ul>
-                                    <li>Tipo de madera: En Bruto</li>
-                                    <li>Soporta 1.300 Kg en Rack o 2.000 Kg en Piso</li>
-                                    <li>Cubierta: 7 piezas, 25x100x1200</li>
-                                    <li>Amarra: 3 piezas, Tablas de 25x100x1000</li>
-                                    <li>Tablas Base: 5 piezas, 25x100x1200</li>
-                                    <li>Tacos Grandes: 6 piezas, 90x90x140</li>
-                                    <li>Tacos Pequeños: 3 piezas, 90x90x100</li>
-                                </ul>
-                            </div>
+                            <h3>Utilidad Principal</h3>
+                            <ul>
+                                <li>Diseñado para la recolección de grandes volúmenes de residuos sólidos, escombros y
+                                    materiales industriales.</li>
+                                <li>Su amplia apertura superior facilita la carga de materiales voluminosos y pesados.
+                                </li>
+                                <li>Esencial para obras de construcción, industrias y grandes proyectos de limpieza.
+                                </li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-        <!-- FIN PRODUCTOS -->
+        <section id="galeria">
+            <div class="container">
+                <h2>Nuestra Flota y Contenedores</h2>
+                <div class="gallery js-flickity"
+                    data-flickity='{ "wrapAround": true, "pageDots": false, "autoPlay": 3000, "pauseAutoPlayOnHover": false }'>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen1.jpg" alt="Imagen de Galería 1">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen2.jpg" alt="Imagen de Galería 2">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen3.jpg" alt="Imagen de Galería 3">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen4.jpg" alt="Imagen de Galería 4">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen5.jpg" alt="Imagen de Galería 5">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen6.jpg" alt="Imagen de Galería 6">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen7.jpg" alt="Imagen de Galería 7">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen8.jpg" alt="Imagen de Galería 8">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen9.jpg" alt="Imagen de Galería 9">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen10.jpg" alt="Imagen de Galería 10">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen11.jpg" alt="Imagen de Galería 11">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen12.jpg" alt="Imagen de Galería 12">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen13.jpg" alt="Imagen de Galería 13">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen14.jpg" alt="Imagen de Galería 14">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen15.jpg" alt="Imagen de Galería 15">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen16.jpg" alt="Imagen de Galería 16">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen17.jpg" alt="Imagen de Galería 17">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen18.jpg" alt="Imagen de Galería 18">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen19.jpg" alt="Imagen de Galería 19">
+                    </div>
+                    <div class="gallery-cell">
+                        <img src="imagenescarrusel/imagen20.jpg" alt="Imagen de Galería 20">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div id="fullscreen-viewer">
+            <img id="fullscreen-image" src="" alt="Vista Ampliada">
+        </div>
 
-        <!-- INICIO CONTRIBUCIONES -->
         <section id="contribucion-sostenible" class="alt-bg">
             <div class="container">
                 <h2>Nuestra Contribución Sostenible</h2>
@@ -302,9 +342,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIN CONTRIBUCIONES -->
-
-        <!-- INICIO NUESTRA MISION -->
         <section id="mision" class="text-section">
             <div class="container">
                 <h2><i class="fas fa-bullseye"></i> Nuestra Misión</h2>
@@ -314,9 +351,6 @@
                     enfoque en la innovación, la eficiencia y la responsabilidad social.</p>
             </div>
         </section>
-        <!-- FIN NUESTRA MISION -->
-
-        <!-- INICIO VISION -->
         <section id="vision" class="text-section alt-bg">
             <div class="container">
                 <h2><i class="fas fa-eye"></i> Nuestra Visión</h2>
@@ -327,16 +361,13 @@
                     tecnologías limpias y prácticas sostenibles que inspiren un cambio positivo.</p>
             </div>
         </section>
-        <!-- FIN VISION -->
-
-        <!-- INICIO UBICACION MAPA -->
         <section id="ubicacion">
             <div class="container">
                 <h2>Dónde Encontrarnos</h2>
                 <div class="ubicacion-content">
                     <div class="map-container">
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3955.726848405058!2d-74.86710708804575!3d9.98986447389296!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e59f5494021d0e7%3A0x5a9d8801d2c5c6e!2sMagangu%C3%A9%2C%20Bol%C3%ADvar!5e0!3m2!1ses!2sco!4v1678901234567!5m2!1ses!2sco"
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3234.126725286971!2d-71.60924712322538!3d-35.40464677259611!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x966614c86d30617f%3A0xf8d1760f862f12c1!2sLa%20Zarzuela%20-%20lote%20C1!5e0!3m2!1ses-419!2scl!4v1715492048344!5m2!1ses-419!2scl"
                             width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
@@ -349,9 +380,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIN UBICACION MAPA -->
-
-        <!-- INICIO DESCARGAS -->
         <section id="descargas">
             <div class="container">
                 <h2>Descargas Útiles</h2>
@@ -382,7 +410,6 @@
                 </div>
             </div>
         </section>
-        <!-- FIN DESCARGAS -->
         <section id="contacto" class="alt-bg">
             <div class="container">
                 <h2>Contáctanos</h2>
@@ -449,7 +476,9 @@
         </form>
         <div id="status-popup" class="status-message"></div>
     </div>
+
     <script src="script.js"></script>
+
     <div class="red">
         <div id="facebook">
             <a href="https://www.facebook.com/TU_PAGINA" target="_blank" class="fab fa-facebook-f"></a>
@@ -458,9 +487,31 @@
             <a href="https://www.instagram.com/TU_PERFIL" target="_blank" class="fab fa-instagram"></a>
         </div>
         <div id="whatsapp">
-            <a href="https://wa.me/56926055863?text=Hola%2C%20quiero%20más%20información" target="_blank" class="fab fa-whatsapp"></a>
+            <a href="https://wa.me/56934693657?text=Hola%2C%20quiero%20más%20información" target="_blank"
+                class="fab fa-whatsapp"></a>
         </div>
     </div>
+
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+
+    <script>
+        const galleryImages = document.querySelectorAll('.gallery-cell img');
+        const viewer = document.getElementById('fullscreen-viewer');
+        const viewerImg = document.getElementById('fullscreen-image');
+
+        galleryImages.forEach(img => {
+            img.addEventListener('click', () => {
+                viewerImg.src = img.src;
+                viewer.style.display = 'flex';
+            });
+        });
+
+        viewer.addEventListener('click', () => {
+            viewer.style.display = 'none';
+            viewerImg.src = '';
+        });
+    </script>
+
 </body>
 
 </html>
