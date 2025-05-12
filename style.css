@@ -1454,7 +1454,7 @@ main > section:not(:first-child).active,
 
    .red {
       position: fixed;
-      top: 600px;
+      top: 700px;
       z-index: 5000;
       left: 0;
     }
