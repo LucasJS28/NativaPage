@@ -110,19 +110,41 @@ document.addEventListener('click', function (event) {
 // INICIO CODIGO PARA QUE AL REDIRECCIONAR CENTRE DIRECTAMENTE
 function scrollToSection(event) {
     event.preventDefault(); // Evita el comportamiento de scroll predeterminado del enlace
+
     const targetId = this.getAttribute('href').substring(1); // Obtiene el ID de la sección destino
     const targetSection = document.getElementById(targetId); // Selecciona la sección
-    if (!targetSection) return; // Si no existe la sección, sale de la función
-    const headerHeight = document.querySelector('header').offsetHeight; // Altura del header
-    const sectionHeight = targetSection.offsetHeight; // Altura de la sección
-    const windowHeight = window.innerHeight; // Altura de la ventana
-    let scrollPosition = targetSection.offsetTop - (windowHeight / 2) + (sectionHeight / 2) - headerHeight;
+
+    if (!targetSection) {
+        console.warn(`Sección con ID '${targetId}' no encontrada.`);
+        return;
+    }
+
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.offsetHeight : 0;
+    const sectionTitle = targetSection.querySelector('h1, h2');
+
+    let targetOffsetTop; // La posición de la parte superior del elemento al que queremos hacer scroll
+
+    if (sectionTitle) {
+        targetOffsetTop = sectionTitle.getBoundingClientRect().top + window.pageYOffset;
+        // console.log(`Título encontrado en #${targetId}. Posición top: ${targetOffsetTop}`);
+    } else {
+
+        targetOffsetTop = targetSection.offsetTop;
+        console.warn(`No se encontró un título (h1 o h2) dentro de la sección #${targetId}. Se hará scroll a la parte superior de la sección.`);
+    }
+
+    let scrollPosition = targetOffsetTop - headerHeight - 50; // Ajusta el '50' según lo que se vea mejor visualmente
+
+    // Asegura que no se scrollee a una posición negativa (por encima del inicio de la página)
     scrollPosition = Math.max(0, scrollPosition);
+
     window.scrollTo({
         top: scrollPosition,
         behavior: 'smooth' // Para un scroll suave
     });
 }
+
 // Asigna la función a los enlaces del menú
 const navLinks = document.querySelectorAll('nav ul li a');
 navLinks.forEach(link => {
