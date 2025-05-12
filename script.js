@@ -62,14 +62,17 @@ var contactButton = document.getElementById("contactButton");
 var bubble = document.getElementById("contactBubble");
 var contactPopup = document.getElementById('myForm');
 var bubbleShownInitially = false; // Nueva variable para rastrear si la burbuja se mostró inicialmente
+
 function openForm() {
     document.getElementById("myForm").style.display = "block";
     bubble.style.display = "none";
 }
+
 function closeForm() {
     document.getElementById("myForm").style.display = "none";
     bubble.style.display = "none"; // Ocultamos la burbuja al cerrar el formulario
 }
+
 document.addEventListener("DOMContentLoaded", function () {
     if (!bubbleShownInitially && bubble) {
         bubble.style.display = "block";
@@ -85,9 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
         bubble.style.display = "none"; // Si ya se mostró, la ocultamos directamente
     }
 });
+
+/*
 window.onscroll = function () {
     if (window.scrollY >= 400) {
-        contactButton.style.opacity = "0";
+        contactButton.style.opacity = "0"; // Esto es lo que hacía que desapareciera
     } else {
         contactButton.style.display = "block";
         setTimeout(function () {
@@ -95,17 +100,19 @@ window.onscroll = function () {
         }, 10);
     }
 };
+*/
+
 contactPopup.addEventListener('click', function (event) {
     event.stopPropagation();
 });
+
 document.addEventListener('click', function (event) {
-    if (event.target !== contactPopup && event.target !== contactButton) {
+    if (event.target !== contactPopup && event.target !== contactButton && !contactButton.contains(event.target) && !contactPopup.contains(event.target)) { // Añadida condición para clics dentro del botón o popup
         contactPopup.style.display = 'none';
         bubble.style.display = 'none'; // También ocultamos la burbuja al hacer clic fuera
     }
 });
 // FIN CODIGO POPUP CONTACTOS
-
 
 // INICIO CODIGO PARA QUE AL REDIRECCIONAR CENTRE DIRECTAMENTE
 function scrollToSection(event) {
