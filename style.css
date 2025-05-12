@@ -427,7 +427,7 @@ footer p {
 }
 
 /* Responsive Design */
-@media (max-width: 768px) {
+@media (max-width: 1150px) { /* ¡CAMBIADO! */
   #logo {
     height: 45px;
   }
@@ -522,7 +522,7 @@ footer p {
 }
 
 /* Desktop specific styles for navigation to override mobile hidden state */
-@media (min-width: 769px) {
+@media (min-width: 1155px) {
   nav {
     max-height: none; /* Eliminar la restricción de altura para escritorio */
     overflow: visible; /* Permitir que el contenido sea visible */
@@ -1681,3 +1681,4 @@ main > section:not(:first-child).active,
         font-size: 16px;
     }
 }
+
