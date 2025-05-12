@@ -1556,7 +1556,7 @@ main > section:not(:first-child).active,
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12); /* Sombra suave, consistente con .servicio-item */
     overflow: hidden;
     width: 80%; /* Ancho del carrusel */
-    max-width: 1200px; /* Ancho máximo para pantallas grandes */
+    max-width: 1500px; /* Ancho máximo para pantallas grandes */
     margin: 0 auto; /* Centra el carrusel en el contenedor */
     padding: 10px; /* Espacio interno alrededor del carrusel para que las sombras y bordes se vean bien */
 }
@@ -1656,6 +1656,11 @@ main > section:not(:first-child).active,
     .gallery-cell {
         height: 200px; /* Ajusta la altura de las celdas para tabletas */
     }
+
+    .gallery{
+      min-width: 100%;
+    }
+    
     .flickity-button {
         width: 35px;
         height: 35px;
@@ -1666,6 +1671,9 @@ main > section:not(:first-child).active,
 @media (max-width: 480px) {
     .gallery-cell {
         height: 250px; /* Ajusta la altura de las celdas para móviles */
+    }
+    .gallery{
+      min-width: 100%;
     }
     .flickity-button {
         width: 30px;
